@@ -4,7 +4,7 @@ RUN apt-get update && \
     apt-get -y install rsyslog && \
     rm -rf /var/lib/apt/lists/*
 
-EXPOSE 514
+EXPOSE 514/udp
 
 VOLUME [ "/var/log", "/etc/rsyslog.d" ]
 
