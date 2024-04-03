@@ -1,4 +1,8 @@
-FROM rsyslog/rsyslog_dev_base_ubuntu:22.04
+FROM debian:bootworm-slim
+
+RUN apt-get update && \
+    apt-get -y install rsyslog && \
+    rm -rf /var/lib/apt/lists/*
 
 EXPOSE 514
 
