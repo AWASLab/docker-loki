@@ -6,6 +6,8 @@ networks:
 services:
   rsyslog:
     build: ./rsyslogd
+    ports:
+      - '514:514/udp'
     cap_add:
       - SYSLOG
     networks:
