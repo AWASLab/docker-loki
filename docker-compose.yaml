@@ -5,14 +5,15 @@ networks:
 
 services:
   rsyslog:
-    image: rsyslog/rsyslog_dev_base_ubuntu:22.04
-    volumes:
-      - ./rsyslog.conf:/etc/rsyslog.conf
-      - /var/log:/var/log
-    ports:
-      - 514:514/udp
-    cap_add:
-      - SYSLOG
+    build: ./rsyslogd
+    # image: rsyslog/rsyslog_dev_base_ubuntu:22.04
+    # volumes:
+      # - ./rsyslog.conf:/etc/rsyslog.conf
+      # - /var/log:/var/log
+    # ports:
+      # - 514:514/udp
+    # cap_add:
+      # - SYSLOG
     networks:
       - loki
   loki:
